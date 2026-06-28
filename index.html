@@ -27,91 +27,26 @@ body{background:var(--bg);color:#fff;font-family:'Inter',sans-serif;font-weight:
 @keyframes cue{0%,100%{opacity:0.3;transform:translateY(0);}50%{opacity:1;transform:translateY(6px);}}
 
 /* ── VISITOR COUNTER ── */
-#visitor-pill{
-  position:fixed;top:16px;left:50%;transform:translateX(-50%);
-  z-index:100;
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(0,0,0,0.55);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:99px;
-  padding:6px 14px;
-  backdrop-filter:blur(12px);
-  font-size:12px;color:rgba(255,255,255,0.45);
-  letter-spacing:0.04em;
-  pointer-events:none;
-}
-#visitor-pill .vdot{
-  width:7px;height:7px;border-radius:50%;
-  background:#22c55e;box-shadow:0 0 6px #22c55e;
-  animation:vpulse 2s ease-in-out infinite;
-}
+#visitor-pill{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;display:inline-flex;align-items:center;gap:7px;background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.08);border-radius:99px;padding:6px 14px;backdrop-filter:blur(12px);font-size:12px;color:rgba(255,255,255,0.45);letter-spacing:0.04em;pointer-events:none;}
+#visitor-pill .vdot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e;animation:vpulse 2s ease-in-out infinite;}
 @keyframes vpulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
 #visitor-count{color:#fff;font-weight:500;}
-
 /* ── BG SETTINGS PANEL ── */
-#bg-btn{
-  position:fixed;bottom:20px;right:20px;z-index:200;
-  width:40px;height:40px;border-radius:50%;
-  background:rgba(0,0,0,0.6);
-  border:1px solid rgba(255,255,255,0.1);
-  backdrop-filter:blur(10px);
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-size:17px;
-  transition:border-color 0.2s,transform 0.2s;
-}
+#bg-btn{position:fixed;bottom:20px;right:20px;z-index:200;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:17px;transition:border-color 0.2s,transform 0.2s;}
 #bg-btn:hover{border-color:rgba(255,45,120,0.4);transform:scale(1.08);}
-
-#bg-panel{
-  position:fixed;bottom:70px;right:20px;z-index:200;
-  width:240px;
-  background:rgba(10,8,20,0.92);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:16px;
-  padding:18px;
-  backdrop-filter:blur(20px);
-  display:none;
-  flex-direction:column;gap:14px;
-}
+#bg-panel{position:fixed;bottom:70px;right:20px;z-index:200;width:240px;background:rgba(10,8,20,0.92);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:18px;backdrop-filter:blur(20px);display:none;flex-direction:column;gap:14px;}
 #bg-panel.open{display:flex;}
 #bg-panel h3{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:2px;}
 .bg-swatches{display:flex;flex-wrap:wrap;gap:8px;}
-.swatch{
-  width:30px;height:30px;border-radius:8px;
-  cursor:pointer;border:2px solid transparent;
-  transition:border-color 0.2s,transform 0.15s;
-  flex-shrink:0;
-}
-.swatch:hover{transform:scale(1.12);}
-.swatch.active{border-color:#fff;}
+.swatch{width:30px;height:30px;border-radius:8px;cursor:pointer;border:2px solid transparent;transition:border-color 0.2s,transform 0.15s;flex-shrink:0;}
+.swatch:hover{transform:scale(1.12);}.swatch.active{border-color:#fff;}
 .bg-divider{height:1px;background:rgba(255,255,255,0.06);}
 .bg-label{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.05em;margin-bottom:4px;}
-#img-url-input{
-  width:100%;background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:8px;padding:8px 10px;
-  color:#fff;font-size:12px;outline:none;
-  transition:border-color 0.2s;
-}
-#img-url-input::placeholder{color:rgba(255,255,255,0.2);}
-#img-url-input:focus{border-color:rgba(255,45,120,0.4);}
-#img-apply{
-  margin-top:4px;width:100%;padding:8px;
-  background:rgba(255,45,120,0.15);
-  border:1px solid rgba(255,45,120,0.25);
-  border-radius:8px;color:#fff;font-size:12px;
-  cursor:pointer;transition:background 0.2s;
-  letter-spacing:0.05em;
-}
-#img-apply:hover{background:rgba(255,45,120,0.28);}
-#img-upload{display:none;}
-.upload-btn{
-  width:100%;padding:8px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.07);
-  border-radius:8px;color:rgba(255,255,255,0.5);font-size:12px;
-  cursor:pointer;transition:background 0.2s;
-  letter-spacing:0.05em;text-align:center;
-}
+#img-url-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px 10px;color:#fff;font-size:12px;outline:none;transition:border-color 0.2s;}
+#img-url-input::placeholder{color:rgba(255,255,255,0.2);}#img-url-input:focus{border-color:rgba(255,45,120,0.4);}
+#img-apply{margin-top:4px;width:100%;padding:8px;background:rgba(255,45,120,0.15);border:1px solid rgba(255,45,120,0.25);border-radius:8px;color:#fff;font-size:12px;cursor:pointer;transition:background 0.2s;letter-spacing:0.05em;}
+#img-apply:hover{background:rgba(255,45,120,0.28);}#img-upload{display:none;}
+.upload-btn{width:100%;padding:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;color:rgba(255,255,255,0.5);font-size:12px;cursor:pointer;transition:background 0.2s;letter-spacing:0.05em;text-align:center;}
 .upload-btn:hover{background:rgba(255,255,255,0.08);}
 
 /* ── DISCORD STATUS CARD ── */
@@ -316,27 +251,14 @@ function tick(){
 }
 tick();setInterval(tick,1000);
 
-// ── VISITOR COUNTER via WebSocket ──
+// ── VISITOR COUNTER ──
 (function(){
-  var countEl=document.getElementById('visitor-count');
-  // connect to the API server's ws endpoint
-  // works both on github pages (via replit domain) and locally
-  var wsUrl='wss://c3dc31cc-8829-473d-8886-c4b40896aeff-00-3jdqdysqu46u0.spock.replit.dev/api/visitors';
-  var delay=5000;
-  function connect(){
-    var ws;
-    try{ ws=new WebSocket(wsUrl); }
-    catch(e){ setTimeout(connect,delay); return; }
-    ws.onmessage=function(e){
-      try{
-        var d=JSON.parse(e.data);
-        if(d.visitors!=null) countEl.textContent=d.visitors;
-      }catch(err){}
-    };
-    ws.onclose=function(){ setTimeout(connect,delay); };
-    ws.onerror=function(){ ws.close(); };
-  }
-  connect();
+  var cel=document.getElementById('visitor-count');
+  var wu='wss://c3dc31cc-8829-473d-8886-c4b40896aeff-00-3jdqdysqu46u0.spock.replit.dev/api/visitors';
+  function go(){var ws;try{ws=new WebSocket(wu);}catch(e){setTimeout(go,5000);return;}
+    ws.onmessage=function(e){try{var d=JSON.parse(e.data);if(d.visitors!=null)cel.textContent=d.visitors;}catch(x){}};
+    ws.onclose=function(){setTimeout(go,5000)};ws.onerror=function(){ws.close()};
+  }go();
 })();
 
 // ── LANYARD DISCORD STATUS ──
@@ -455,127 +377,24 @@ type();
   });
 })();
 
-// ── DEVTOOLS DETECT ──
-(function(){
-  var warned=false;
-  var overlay=document.createElement('div');
-  overlay.id='dt-overlay';
-  overlay.style.cssText='display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;flex-direction:column;gap:12px;';
-  overlay.innerHTML='<div style="font-family:\'Bebas Neue\',sans-serif;font-size:42px;color:#ff2d78;text-shadow:0 0 20px #ff2d78;letter-spacing:0.05em;">hey!</div><div style="font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:0.05em;">please do NOT open dev tools on this page lol</div>';
-  document.body.appendChild(overlay);
-
-  function show(){
-    if(warned)return;
-    warned=true;
-    overlay.style.display='flex';
-    // re-hide after 4s so they can still use the page
-    setTimeout(function(){ overlay.style.display='none'; warned=false; },4000);
-  }
-
-  // method 1: size diff (catches docked devtools)
-  var threshold=160;
-  function checkSize(){
-    if(window.outerWidth-window.innerWidth>threshold||window.outerHeight-window.innerHeight>threshold) show();
-  }
-  setInterval(checkSize,800);
-
-  // method 2: debugger timing trick (catches undocked/floating devtools)
-  setInterval(function(){
-    var t=new Date();
-    debugger;
-    if(new Date()-t>100) show();
-  },1000);
-})();
-
 // ── SCROLL REVEAL ──
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
 document.querySelectorAll('.section').forEach(function(s){obs.observe(s);});
 
 // ── BACKGROUND SETTINGS ──
-var COLORS=[
-  {label:'Default',val:'#03000a'},
-  {label:'Midnight',val:'#000000'},
-  {label:'Navy',val:'#020b18'},
-  {label:'Forest',val:'#020f07'},
-  {label:'Plum',val:'#0d0010'},
-  {label:'Slate',val:'#070b10'},
-  {label:'Crimson',val:'#0f0005'},
-  {label:'Warm',val:'#0f0a00'},
-];
-
-var bgLayer=document.getElementById('bg-img-layer');
-var swatchContainer=document.getElementById('swatches');
-var activeColor='#03000a';
-
+var COLORS=[{l:'Default',v:'#03000a'},{l:'Midnight',v:'#000000'},{l:'Navy',v:'#020b18'},{l:'Forest',v:'#020f07'},{l:'Plum',v:'#0d0010'},{l:'Slate',v:'#070b10'},{l:'Crimson',v:'#0f0005'},{l:'Warm',v:'#0f0a00'}];
+var bgl=document.getElementById('bg-img-layer'),sc=document.getElementById('swatches');
+function setImgBg(u){bgl.style.backgroundImage='url('+u+')';bgl.style.opacity='1';document.body.style.background='#000';}
 COLORS.forEach(function(c){
-  var s=document.createElement('div');
-  s.className='swatch'+(c.val===activeColor?' active':'');
-  s.style.background=c.val;
-  s.title=c.label;
-  s.addEventListener('click',function(){
-    document.querySelectorAll('.swatch').forEach(function(x){x.classList.remove('active');});
-    s.classList.add('active');
-    document.documentElement.style.setProperty('--bg',c.val);
-    document.body.style.background=c.val;
-    bgLayer.style.opacity='0';
-    localStorage.setItem('quack_bg_type','color');
-    localStorage.setItem('quack_bg_val',c.val);
-  });
-  swatchContainer.appendChild(s);
+  var s=document.createElement('div');s.className='swatch'+(c.v==='#03000a'?' active':'');s.style.background=c.v;s.title=c.l;
+  s.addEventListener('click',function(){document.querySelectorAll('.swatch').forEach(function(x){x.classList.remove('active');});s.classList.add('active');document.documentElement.style.setProperty('--bg',c.v);document.body.style.background=c.v;bgl.style.opacity='0';localStorage.setItem('qbgt','color');localStorage.setItem('qbgv',c.v);});
+  sc.appendChild(s);
 });
-
-document.getElementById('img-apply').addEventListener('click',function(){
-  var url=document.getElementById('img-url-input').value.trim();
-  if(!url)return;
-  applyImageBg(url);
-  localStorage.setItem('quack_bg_type','url');
-  localStorage.setItem('quack_bg_val',url);
-});
-
-document.getElementById('img-upload').addEventListener('change',function(e){
-  var file=e.target.files[0];
-  if(!file)return;
-  var reader=new FileReader();
-  reader.onload=function(ev){
-    applyImageBg(ev.target.result);
-    // note: uploaded images aren't persisted across refreshes (no storage for data URLs)
-  };
-  reader.readAsDataURL(file);
-});
-
-function applyImageBg(url){
-  bgLayer.style.backgroundImage='url('+url+')';
-  bgLayer.style.opacity='1';
-  document.body.style.background='#000';
-}
-
-// restore saved preference
-(function(){
-  var t=localStorage.getItem('quack_bg_type');
-  var v=localStorage.getItem('quack_bg_val');
-  if(!t||!v)return;
-  if(t==='color'){
-    document.body.style.background=v;
-    document.documentElement.style.setProperty('--bg',v);
-    document.querySelectorAll('.swatch').forEach(function(s){
-      if(s.style.background===v||s.title===v)s.classList.add('active');
-    });
-  } else if(t==='url'){
-    applyImageBg(v);
-  }
-})();
-
-// toggle panel
-document.getElementById('bg-btn').addEventListener('click',function(e){
-  e.stopPropagation();
-  document.getElementById('bg-panel').classList.toggle('open');
-});
-document.addEventListener('click',function(e){
-  var panel=document.getElementById('bg-panel');
-  if(!panel.contains(e.target)&&e.target!==document.getElementById('bg-btn')){
-    panel.classList.remove('open');
-  }
-});
+document.getElementById('img-apply').addEventListener('click',function(){var u=document.getElementById('img-url-input').value.trim();if(!u)return;setImgBg(u);localStorage.setItem('qbgt','url');localStorage.setItem('qbgv',u);});
+document.getElementById('img-upload').addEventListener('change',function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(x){setImgBg(x.target.result);};r.readAsDataURL(f);});
+(function(){var t=localStorage.getItem('qbgt'),v=localStorage.getItem('qbgv');if(!t||!v)return;if(t==='color'){document.body.style.background=v;document.documentElement.style.setProperty('--bg',v);}else if(t==='url'){setImgBg(v);}})();
+document.getElementById('bg-btn').addEventListener('click',function(e){e.stopPropagation();document.getElementById('bg-panel').classList.toggle('open');});
+document.addEventListener('click',function(e){var p=document.getElementById('bg-panel');if(!p.contains(e.target)&&e.target!==document.getElementById('bg-btn'))p.classList.remove('open');});
 </script>
 </body>
 </html>
