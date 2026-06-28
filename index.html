@@ -321,9 +321,7 @@ tick();setInterval(tick,1000);
   var countEl=document.getElementById('visitor-count');
   // connect to the API server's ws endpoint
   // works both on github pages (via replit domain) and locally
-  var wsUrl='wss://'+window.location.hostname.replace('heycodngskills.github.io','').trim();
-  // since this is a static github pages site, we point at the replit api server
-  wsUrl='wss://quack-api.replit.app/api/visitors';
+  var wsUrl='wss://c3dc31cc-8829-473d-8886-c4b40896aeff-00-3jdqdysqu46u0.spock.replit.dev/api/visitors';
   var delay=5000;
   function connect(){
     var ws;
