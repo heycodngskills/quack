@@ -455,6 +455,38 @@ type();
   });
 })();
 
+// ── DEVTOOLS DETECT ──
+(function(){
+  var warned=false;
+  var overlay=document.createElement('div');
+  overlay.id='dt-overlay';
+  overlay.style.cssText='display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;flex-direction:column;gap:12px;';
+  overlay.innerHTML='<div style="font-family:\'Bebas Neue\',sans-serif;font-size:42px;color:#ff2d78;text-shadow:0 0 20px #ff2d78;letter-spacing:0.05em;">hey!</div><div style="font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:0.05em;">please do NOT open dev tools on this page lol</div>';
+  document.body.appendChild(overlay);
+
+  function show(){
+    if(warned)return;
+    warned=true;
+    overlay.style.display='flex';
+    // re-hide after 4s so they can still use the page
+    setTimeout(function(){ overlay.style.display='none'; warned=false; },4000);
+  }
+
+  // method 1: size diff (catches docked devtools)
+  var threshold=160;
+  function checkSize(){
+    if(window.outerWidth-window.innerWidth>threshold||window.outerHeight-window.innerHeight>threshold) show();
+  }
+  setInterval(checkSize,800);
+
+  // method 2: debugger timing trick (catches undocked/floating devtools)
+  setInterval(function(){
+    var t=new Date();
+    debugger;
+    if(new Date()-t>100) show();
+  },1000);
+})();
+
 // ── SCROLL REVEAL ──
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
 document.querySelectorAll('.section').forEach(function(s){obs.observe(s);});
